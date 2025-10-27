@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivasakti Medical Store - Your Trusted Family Chemist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* --- General Reset & Setup --- */
+        :root {
+            --primary-blue: #0056b3; /* Darker blue for professionalism */
+            --light-blue: #e6f0ff; /* Very light blue for subtle background/accents */
+            --white: #ffffff;
+            --dark-text: #333333;
+            --grey-text: #666666;
+            --font-main: 'Poppins', sans-serif;
+            --font-heading: 'Roboto Slab', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--dark-text);
+            line-height: 1.6;
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 2.5em;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+        }
+
+        /* --- Header/Navigation --- */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 1.5em;
+            color: var(--primary-blue);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            border: 2px solid var(--white);
+        }
+
+        .shop-info h1 {
+            font-size: 1.8em;
+            margin: 0;
+            font-family: var(--font-heading);
+        }
+
+        .shop-info p {
+            font-size: 0.9em;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-blue);
+        }
+        
+        /* Hamburger menu for mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        
+        /* --- Hero Section --- */
+        #hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), url('https://via.placeholder.com/1600x600/0056b3/e6f0ff?text=Medical+Store+Facade') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content h2 {
+            font-family: var(--font-heading);
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: var(--light-blue);
+            transform: scale(1.05);
+        }
+
+        /* --- About Us Section --- */
+        #about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--grey-text);
+        }
+
+        .about-image-placeholder {
+            flex: 1;
+            min-width: 250px;
+            height: 300px;
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-heading);
+            color: var(--primary-blue);
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        /* --- Services Section --- */
+        #services {
+            background-color: var(--light-blue);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-heading);
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+
+        .service-card p {
+            font-size: 0.9em;
+            color: var(--grey-text);
+        }
+
+        /* --- Contact Us Section --- */
+        #contact {
+            background-color: var(--white);
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 1.5em;
+            color: var(--primary-blue);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .contact-item p, .contact-item a {
+            margin: 0;
+            font-size: 1.1em;
+            color: var(--dark-text);
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .map-placeholder {
+            flex: 2;
+            height: 400px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--grey-text);
+            font-size: 1.1em;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .contact-grid {
+                flex-direction: column;
+            }
+            .map-placeholder {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: var(--primary-blue);
+                padding-top: 10px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                margin: 10px 0;
+                padding: 10px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5em;
+            }
+            
+            .hero-content p {
+                font-size: 1.2em;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            .about-image-placeholder {
+                width: 100%;
+                max-width: 400px;
+                height: 250px;
+            }
+            .section-heading {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo-group">
+                <div class="logo-placeholder"><i class="fas fa-prescription"></i></div>
+                <div class="shop-info">
+                    <h1>Shivasakti Medical Store</h1>
+                    <p>Your Trusted Family Chemist Since 1995</p>
+                </div>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="#hero">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">&#9776;</div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Caring for Your Health, One Prescription at a Time.</h2>
+            <p>Reliable service and genuine medicines have been our promise for over two decades. Trust the chemist your family relies on.</p>
+            <a href="#contact" class="hero-button">Get in Touch Today</a>
+        </div>
+    </section>
+
+    <section id="about" class="light-bg">
+        <div class="container">
+            <h2 class="section-heading">About Our Dedication</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Shivasakti Medical Store</strong> has proudly served the community since **1995**. We are not just a medical shop; we are a dedicated partner in your family's health and wellness journey.</p>
+                    <p>Our commitment is to provide **genuine, high-quality medicines** and **compassionate, reliable service**. We believe in building lasting relationships based on trust and professional care. When you choose us, you choose experience, honesty, and a family-run business that puts your health first.</p>
+                    <p>Our team is always ready to assist you with your needs and offer health-related advice.</p>
+                </div>
+                <div class="about-image-placeholder">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-heading">Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-pills"></i></div>
+                    <h3>Medicine Supply</h3>
+                    <p>Stock of a wide range of branded and generic medicines, ensuring you find exactly what your doctor prescribed.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Health Consultancy</h3>
+                    <p>Experienced staff providing basic health advice, guidance on dosage, and over-the-counter medication recommendations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Home Delivery</h3>
+                    <p>Convenient and prompt delivery of your medicines right to your doorstep, especially for local customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-heading">Contact & Location</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p><strong>Address:</strong></p>
+                            <p> Hospital, Rod, Dugudha, Udala, Odisha,<br>Udala, Pin - 757041</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <p><strong>Phone:</strong></p>
+                            <a href="tel:+91 94385 18833">+91 94385 18833</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <p><strong>WhatsApp:</strong></p>
+                            <a href="https://wa.me/94385 18833" target="_blank">+91 94385 18833</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p><strong>Email:</strong></p>
+                            <a href="mailto:shivasaktimedical@gmail.com">shivasaktimedical@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-placeholder">
+                    <p>Placeholder for Google Maps Embed</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Shivasakti Medical Store. All Rights Reserved.</p>
+            <p>Powered by –Loney |San Syndicate A1</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked (on mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
